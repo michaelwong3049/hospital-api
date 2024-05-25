@@ -1,0 +1,32 @@
+*{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body{
+    margin: 0;
+}
+
+header{
+    background-color: rgb(240,240,240,75%);
+}
+
+header .container{
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header a{
+    text-decoration: none;
+}
+
+#homePage{
+    background-color: white;
+    border-radius: 20px;
+    padding: 5px 10px;
+    box-shadow: 5px 5px;
+}
