@@ -1,11 +1,12 @@
 require('dotenv').config(); 
 const express = require('express');
+const cors = require('cors');
 
 const app = express();
 app.use(express.json());
-
+app.use(cors());
 const patientRouter = require('./routes/patients');
-app.use('/', patientRouter);  
+app.use('/patients', patientRouter);  
 
 const mongoose = require('mongoose');
 mongoose.connect(process.env.MONGO_URI)

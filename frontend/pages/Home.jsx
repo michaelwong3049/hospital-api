@@ -2,13 +2,11 @@ import { useEffect, useState } from 'react'
 
 function Home(){
     const [patients, setPatients] = useState(null);
-
+    
     useEffect(() => {
         const fetchPatients = async () => {
             const response = await fetch('http://localhost:3000/patients');
-            console.log(response);
             const json = await response.json();
-            console.log(json)
 
             if(response.ok){
                 setPatients(json);
@@ -16,11 +14,14 @@ function Home(){
         }
         fetchPatients();
     }, [])
+    
     return(
-        <div className="Home">
-            {patients && patients.map(() => (
-                <p key={workout._id}>{patients.name}</p>
-            ))}
+        <div className="home">
+            <div className="patients">
+                {patients && patients.map((patient) => (
+                    <p key={patient._id}>{patient.name}</p>
+                ))}
+            </div>
         </div>
     );
 
