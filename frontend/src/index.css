@@ -28,5 +28,14 @@ header a{
     background-color: white;
     border-radius: 20px;
     padding: 5px 10px;
-    box-shadow: 5px 5px;
+}
+
+.patients{
+    margin-left: 50px;
+}
+
+#searchPatientInput{
+    height: 50px;
+    width: 200px;
+    margin-left: 50px;
 }

@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react'
 
+//components
+import SearchPatient from '../components/SearchPatient'
+
 function Home(){
     const [patients, setPatients] = useState(null);
     
@@ -16,6 +19,8 @@ function Home(){
     }, [])
     
     return(
+        <>
+        <SearchPatient></SearchPatient>
         <div className="home">
             <div className="patients">
                 {patients && patients.map((patient) => (
@@ -23,8 +28,8 @@ function Home(){
                 ))}
             </div>
         </div>
+        </>
     );
-
 }
 
 export default Home
