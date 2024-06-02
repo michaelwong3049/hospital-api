@@ -7,7 +7,9 @@ function SearchPatient(patient) {
         <div className="searchPatient">
             <form>
                 <input type="text" id="searchPatientInput" name="searchPatient" placeholder="Please Enter Patient Name"></input>
-                <input type="submit" id="submitPatient"></input>
+                <button onClick={(e) => {
+                    e.preventDefault();
+                }} id="submitPatient">Submit</button>
             </form>
         </div>
     );

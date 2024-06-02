@@ -2,6 +2,7 @@
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
+    letter-spacing: .1em;
 }
 
 body{
@@ -34,13 +35,23 @@ header a{
     border: 2px solid purple;
     border-radius: 25px;
     height: 50px;
-    width: 200px;
+    width: 250px;
+    text-align: center;
 }
 
 #submitPatient{
     margin-left: 2px;
     border: 2px solid purple;
     border-radius: 25px;
+    height: 25px;
+    width: 100px;
+    cursor: pointer;
+}
+
+#submitPatient:hover{
+    transition: ease 0.6s;
+    color: white;
+    background-color: rgb(188, 38, 211, 50%);
 }
 
 /* Home Page CSS */
@@ -63,22 +74,11 @@ header a{
     justify-content: space-evenly;
 }
 
-.updatePatient{
+.patientOptions{
     border-radius: 25px;
     border: 2px solid rgb(188, 38, 211);
     padding: 7.5px;
-}
-
-.createPatient{
-    border-radius: 25px;
-    border: 2px solid rgb(188, 38, 211);
-    padding: 7.5px;
-}
-
-.deletePatient{
-    border-radius: 25px;
-    border: 2px solid rgb(188, 38, 211);
-    padding: 7.5px;
+    cursor: pointer;
 }
 
 /* Update Page CSS */
@@ -95,3 +95,50 @@ header a{
     font-weight: bold;
     margin-bottom: 10px;    
 }
+
+/* Create Page CSS */
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.dataForm{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.data{
+    border: 2px solid purple;
+    border-radius: 25px;
+    height: 50px;
+    width: 400px;
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    text-align: center;
+    font-size: larger;
+}
+
+.data::placeholder{
+    text-align: center;
+}
+
+.submit{
+    font-size: larger;
+    background-color: white;
+    border: 2px solid purple;
+    border-radius: 25px;
+    height: 50px;
+    width: 200px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.submit:hover{
+    transition: ease .6s;
+    color: white;
+    background-color: rgb(188, 38, 211, 50%);
+}
+
+
