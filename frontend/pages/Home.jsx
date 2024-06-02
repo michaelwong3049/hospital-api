@@ -8,9 +8,9 @@ function Home(){
         <div className="Home">
             <p id="optionHeading">Please Select Which Best Fits Your Needs</p>
             <div className="options">
-                <div onClick={() => navigate('/Update')} className="updatePatient">Updating Patient Info</div>
-                <div onClick={() => navigate('/Create')} className="createPatient">Creating New Patient</div>
-                <div onClick={() => navigate('/Delete')} className="deletePatient">Deleting Patient</div>
+                <div onClick={() => navigate('/Update')} className="patientOptions">Updating Patient Info</div>
+                <div onClick={() => navigate('/Create')} className="patientOptions">Creating New Patient</div>
+                <div onClick={() => navigate('/Delete')} className="patientOptions">Deleting Patient</div>
             </div>
         </div>
     );
