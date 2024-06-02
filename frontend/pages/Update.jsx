@@ -17,6 +17,8 @@ function Update(){
         }
         fetchPatients();
     }, [])
+
+
     
     return(
         <>
