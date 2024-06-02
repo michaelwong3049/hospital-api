@@ -1,34 +1,18 @@
 import { useEffect, useState } from 'react'
-
-//components
-import SearchPatient from '../components/SearchPatient'
-
+import { useNavigate } from 'react-router-dom'
+ 
 function Home(){
-    const [patients, setPatients] = useState(null);
-    
-    useEffect(() => {
-        const fetchPatients = async () => {
-            const response = await fetch('http://localhost:3000/patients');
-            const json = await response.json();
+    const navigate = useNavigate();
 
-            if(response.ok){
-                setPatients(json);
-            }
-        }
-        fetchPatients();
-    }, [])
-    
     return(
-        <>
-        <SearchPatient></SearchPatient>
-        <div className="home">
-            <div className="patients">
-                {patients && patients.map((patient) => (
-                    <p key={patient._id}>{patient.name}</p>
-                ))}
+        <div className="Home">
+            <p id="optionHeading">Please Select Which Best Fits Your Needs</p>
+            <div className="options">
+                <div onClick={() => navigate('/Update')} className="updatePatient">Updating Patient Info</div>
+                <div onClick={() => navigate('/Create')} className="createPatient">Creating New Patient</div>
+                <div onClick={() => navigate('/Delete')} className="deletePatient">Deleting Patient</div>
             </div>
         </div>
-        </>
     );
 }
 
