@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
  
 function Home(){
@@ -8,7 +7,7 @@ function Home(){
         <div className="Home">
             <p id="optionHeading">Please Select Which Best Fits Your Needs</p>
             <div className="options">
-                <div onClick={() => navigate('/Update')} className="patientOptions">Updating Patient Info</div>
+                <div onClick={() => navigate('/ChoosePatient')} className="patientOptions">Updating Patient Info</div>
                 <div onClick={() => navigate('/Create')} className="patientOptions">Creating New Patient</div>
                 <div onClick={() => navigate('/Delete')} className="patientOptions">Deleting Patient</div>
             </div>
@@ -16,4 +15,4 @@ function Home(){
     );
 }
 
-export default Home
+export default Home;
