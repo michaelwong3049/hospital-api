@@ -1,18 +1,12 @@
-import { useState } from 'react'
-
-function SearchPatient(patient) {
-    const [result, setResult] = useState(null);
-
+function SearchPatient(){
     return(
         <div className="searchPatient">
             <form>
-                <input type="text" id="searchPatientInput" name="searchPatient" placeholder="Please Enter Patient Name"></input>
-                <button onClick={(e) => {
-                    e.preventDefault();
-                }} id="submitPatient">Submit</button>
+                <input type="text" className="searchPatientInput" placeholder="Input Patient To Be Deleted"></input>
+                <button type="submit" className="searchPatientSubmit">Submit</button>
             </form>
-        </div>
+        </div>  
     );
 }
 
-export default SearchPatient    
+export default SearchPatient;
