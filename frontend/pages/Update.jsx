@@ -1,38 +1,52 @@
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
-//components
-import SearchPatient from '../components/SearchPatient'
+function Update({data, name}){
+    console.log({name});
+    const n = name;
+    const [age, setAge] = useState('');
+    const [bp, setBP] = useState('');
+    const [glucose, setGlucose] = useState('');
+    const [insulin, setInsulin] = useState('');
+    const [bmi, setBMI] = useState('');
+    let URL = "http://localhost:3000/patients/" + data;
+    console.log(URL);
+    const navigate = useNavigate();
 
-function Update(){
-    const [patients, setPatients] = useState(null);
-    
-    useEffect(() => {
-        const fetchPatients = async () => {
-            const response = await fetch('http://localhost:3000/patients');
-            const json = await response.json();
-
-            if(response.ok){
-                setPatients(json);
+   function handleSubmit(e){
+        e.preventDefault();
+        const updatedPatient = {n, age, bp, glucose, insulin, bmi};
+        fetch(URL, {
+            method: 'PUT',
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(updatedPatient)
+        }).then(response => {
+            if (response.ok) {
+                navigate('../Success');
+            } else{
+                throw new Error('Failed to update patient')
             }
-        }
-        fetchPatients();
-    }, [])
+        })
+        .catch(error => {
+            console.log('Error', error);
+        })
+    }
 
-
-    
     return(
-        <>
-        <p id="listHeading">List of Patients</p>
-        <SearchPatient></SearchPatient>
-        <div className="home">
-            <div className="patients">
-                {patients && patients.map((patient) => (
-                    <p key={patient._id}>{patient.name}</p>
-                ))}
+        <div className="Update">
+            <div className="container">
+            <p id="updateText">Enter UPDATED Patient Info for: {name}</p>
+            <form className="dataForm" onSubmit={handleSubmit}>
+                <input type="text" value={age} onChange={(e) => setAge(e.target.value)} className="data" placeholder="Enter Patient Age" />
+                <input type="text" value={bp} onChange={(e) => setBP(e.target.value)} className="data" placeholder="Enter Blood Pressure" />
+                <input type="text" value={glucose} onChange={(e) => setGlucose(e.target.value)} className="data" placeholder="Enter Glucose" />
+                <input type="text" value={insulin} onChange={(e) => setInsulin(e.target.value)} className="data" placeholder="Enter Insulin" />
+                <input type="text" value={bmi} onChange={(e) => setBMI(e.target.value)} className="data" placeholder="Enter BMI" />
+                <button type="submit" className="submit">Submit</button>
+            </form>
             </div>
         </div>
-        </>
     );
 }
 
-export default Update
+export default Update;
