@@ -31,27 +31,25 @@ header a{
     justify-content: center;
 }
 
-#searchPatientInput{
+.searchPatientInput{
     border: 2px solid purple;
     border-radius: 25px;
+    background-color: white;
     height: 50px;
     width: 250px;
     text-align: center;
 }
 
-#submitPatient{
-    margin-left: 2px;
-    border: 2px solid purple;
+.searchPatientSubmit{
+    margin-left: 5px;
+    border: 2px solid rgb(188,38,211);
     border-radius: 25px;
-    height: 25px;
-    width: 100px;
-    cursor: pointer;
+    background-color: white;
 }
 
-#submitPatient:hover{
-    transition: ease 0.6s;
-    color: white;
-    background-color: rgb(188, 38, 211, 50%);
+.searchPatientSubmit:hover{
+    transition: .6s ease;
+    background-color: rgb(188,38,211,50%);
 }
 
 /* Home Page CSS */
@@ -81,7 +79,25 @@ header a{
     cursor: pointer;
 }
 
+.patientOptions:hover{
+    transition: .6s ease;
+    background-color: rgb(188,38,211, 50%);
+}
+
 /* Update Page CSS */
+.Update{
+    display: flex;
+    flex-direction: column;
+}
+
+#updateText{
+    display: flex;
+    justify-content: center;
+    font-weight: bolder;
+    text-decoration: underline;
+    font-size: 2em;
+}
+
 .home{
     display: flex;
     justify-content: center;
@@ -97,7 +113,7 @@ header a{
 }
 
 /* Create Page CSS */
-.container{
+.containerCreate{
     display: flex;
     justify-content: center;
 }
@@ -141,4 +157,35 @@ header a{
     background-color: rgb(188, 38, 211, 50%);
 }
 
+/* Success Page CSS */
+.confirm{
+    display: flex;
+    justify-content: center;
+}
 
+.wrapper{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.return{
+    border: 2px solid purple;
+    border-radius: 25px;
+    background-color: white;
+    width: 200px;
+}
+
+.return:hover{
+    transition: .6s ease;
+    background-color: rgb(188,38,211,50%);
+}
+
+/*Delete Page CSS*/
+#deleteText{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 2em;
+    text-decoration: underline;
+}
